@@ -1,0 +1,28 @@
+<h2>Listing jukes</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for juke <- @jukes do %>
+    <tr>
+      <td><%= juke.name %></td>
+      <td><%= juke.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: juke_path(@conn, :show, juke), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: juke_path(@conn, :edit, juke), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: juke_path(@conn, :delete, juke), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New juke", to: juke_path(@conn, :new) %>

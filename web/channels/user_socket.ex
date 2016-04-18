@@ -2,7 +2,7 @@ defmodule JukeLife.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", JukeLife.RoomChannel
+  channel "jukes:*", JukeLife.JukeChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

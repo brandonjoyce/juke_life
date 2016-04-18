@@ -27,3 +27,13 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+# Configure guardian authentication
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "JukeLife",
+  ttl: { 30, :days },
+  verify_issuer: true, # optional
+  secret_key: System.get_env("JWT_SECRET_KEY"),
+  serializer: JukeLife.GuardianSerializer

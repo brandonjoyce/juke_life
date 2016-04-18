@@ -1,0 +1,6 @@
+<h2>Edit selection</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: selection_path(@conn, :update, @selection) %>
+
+<%= link "Back", to: selection_path(@conn, :index) %>

@@ -1,0 +1,30 @@
+<h2>Listing selections</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Played</th>
+      <th>Juke</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for selection <- @selections do %>
+    <tr>
+      <td><%= selection.url %></td>
+      <td><%= selection.played %></td>
+      <td><%= selection.juke_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: selection_path(@conn, :show, selection), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: selection_path(@conn, :edit, selection), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: selection_path(@conn, :delete, selection), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New selection", to: selection_path(@conn, :new) %>

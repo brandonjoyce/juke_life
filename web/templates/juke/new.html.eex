@@ -1,0 +1,6 @@
+<h2>New juke</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: juke_path(@conn, :create) %>
+
+<%= link "Back", to: juke_path(@conn, :index) %>

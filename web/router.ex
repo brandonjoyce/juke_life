@@ -17,6 +17,8 @@ defmodule JukeLife.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/jukes", JukeController
+    resources "/selections", SelectionController
   end
 
   # Other scopes may use custom stacks.

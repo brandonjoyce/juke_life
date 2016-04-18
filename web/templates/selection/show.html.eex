@@ -1,0 +1,23 @@
+<h2>Show selection</h2>
+
+<ul>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @selection.url %>
+  </li>
+
+  <li>
+    <strong>Played:</strong>
+    <%= @selection.played %>
+  </li>
+
+  <li>
+    <strong>Juke:</strong>
+    <%= @selection.juke_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: selection_path(@conn, :edit, @selection) %>
+<%= link "Back", to: selection_path(@conn, :index) %>

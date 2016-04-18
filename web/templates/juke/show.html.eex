@@ -1,0 +1,18 @@
+<h2>Show juke</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @juke.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @juke.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: juke_path(@conn, :edit, @juke) %>
+<%= link "Back", to: juke_path(@conn, :index) %>
